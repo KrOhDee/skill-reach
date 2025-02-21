@@ -4,7 +4,7 @@ import {
   monthNames,
   formatTo12Hour,
   getOrdinalSuffix,
-  getAmPM,
+  getAmPm,
 } from '../_utils/dateUtils';
 
 import { useState, useEffect } from 'react';
@@ -24,7 +24,7 @@ export default function DateTime() {
   const date = currentTime.getDate();
   const hour = formatTo12Hour(currentTime.getHours());
   const minute = currentTime.getMinutes().toString().padStart(2, '0');
-  const ampm = getAmPM(currentTime.getHours());
+  const ampm = getAmPm(currentTime.getHours());
   const month = monthNames[currentTime.getMonth()];
   const dateSuffix = getOrdinalSuffix(date);
 

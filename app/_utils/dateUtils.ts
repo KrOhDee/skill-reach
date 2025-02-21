@@ -17,7 +17,7 @@ export function formatTo12Hour(hour: number): number {
   return hour % 12 || 12;
 }
 
-export function getAmPM(hour: number): string {
+export function getAmPm(hour: number): string {
   return hour >= 12 ? 'PM' : 'AM';
 }
 
