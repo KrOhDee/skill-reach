@@ -1,7 +1,9 @@
+import SkillCard from '../_components/SkillCard';
+
 export default function Skills() {
   return (
     <div>
-      <p>This is the skills page</p>
+      <SkillCard />
     </div>
   );
 }
