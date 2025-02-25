@@ -12,4 +12,12 @@ model Skill {
   name String 
   targetHours Int
   loggedHours Int @default(0)
+  sessions StudySession[]
+}
+
+model StudySession {
+  id Int @id @default(autoincrement())
+  skill Skill @relation(fields: [skillId], references: [id])
+  skillId Int
+  studiedAt DateTime @default(now())
 }
