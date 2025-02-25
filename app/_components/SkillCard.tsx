@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Modal from './Modal';
 
 interface SkillCardProps {
   iconSrc: string;
@@ -32,7 +33,7 @@ export default function SkillCard({
         </p>
         <progress value={progressValue} max={100} className='w-full'></progress>
       </div>
-      <button className='ml-auto mr-4 p-2 rounded-md bg-slate-100'>+</button>
+      <Modal />
     </div>
   );
 }
