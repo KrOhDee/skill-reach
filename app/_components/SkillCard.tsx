@@ -21,12 +21,14 @@ export default function SkillCard({
         <Image
           src={iconSrc}
           alt={alt}
+          width={10}
+          height={10}
           className='p-2 rounded-xl bg-slate-100'
         />
       </div>
       <div className='w-3/5 pl-6'>
         <p>
-          <span>{skillName}</span> <span>{skillLevel}</span>
+          <span>{skillName}</span> <span>Lvl.{skillLevel}</span>
         </p>
         <progress value={progressValue} max={100} className='w-full'></progress>
       </div>
