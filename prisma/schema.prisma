@@ -10,6 +10,8 @@ datasource db {
 model Skill {
   id Int @id @default(autoincrement())
   name String 
+  icon String
+  alt String
   targetHours Int
   loggedHours Int @default(0)
   sessions StudySession[]
