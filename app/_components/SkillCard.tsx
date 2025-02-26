@@ -17,15 +17,9 @@ export default function SkillCard({
   progressValue,
 }: SkillCardProps) {
   return (
-    <div className='bg-gray-600 flex items-center mx-auto w-3/4 lg:w-1/2 p-4 rounded-full'>
+    <div className='bg-gray-600 flex items-center mx-auto w-3/4 lg:w-1/2 p-4 rounded-full mb-2'>
       <div className='pl-4'>
-        <Image
-          src={iconSrc}
-          alt={alt}
-          width={10}
-          height={10}
-          className='p-2 rounded-xl bg-slate-100'
-        />
+        <Image src={iconSrc} alt={alt} width={50} height={50} />
       </div>
       <div className='w-3/5 pl-6'>
         <p>
