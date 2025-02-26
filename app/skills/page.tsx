@@ -12,16 +12,27 @@ export default async function Skills() {
   const skills = await getAllSkills();
 
   return (
-    <div>
-      {skills.map((skill) => (
-        <SkillCard
-          key={skill.id}
-          skillName={skill.name}
-          skillLevel={1}
-          progressValue={50}
-          iconSrc='../file.svg'
-        />
-      ))}
+    <div className='pt-4'>
+      {skills.map((skill) => {
+        const progressValue = (skill.loggedHours / skill.targetHours) * 100;
+        const k = 2; // Adjust value to tweak scaling
+        const level = Math.floor(
+          1 +
+            49 *
+              ((1 - Math.exp(-k * (skill.loggedHours / skill.targetHours))) /
+                (1 - Math.exp(-k)))
+        );
+        return (
+          <SkillCard
+            key={skill.id}
+            skillName={skill.name}
+            skillLevel={level}
+            progressValue={progressValue}
+            iconSrc={`/${skill.icon}`}
+            alt={skill.alt}
+          />
+        );
+      })}
     </div>
   );
 }
