@@ -30,6 +30,8 @@ export default async function Skills() {
             progressValue={progressValue}
             iconSrc={`/${skill.icon}`}
             alt={skill.alt}
+            loggedHours={skill.loggedHours}
+            targetHours={skill.targetHours}
           />
         );
       })}
