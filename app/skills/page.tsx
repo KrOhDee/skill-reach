@@ -1,16 +1,16 @@
+'use client';
+
 import SkillCard from '../_components/SkillCard';
-import { PrismaClient } from '@prisma/client';
+import { useEffect } from 'react';
+import { useSkillsStore } from '../_store/skillsStore';
 import { calculateProgress, calculateSkillLevel } from '../_utils/skillUtils';
 
-const prisma = new PrismaClient();
+export default function Skills() {
+  const { skills, fetchSkills } = useSkillsStore();
 
-export default async function Skills() {
-  async function getAllSkills() {
-    'use server';
-    return await prisma.skill.findMany();
-  }
-
-  const skills = await getAllSkills();
+  useEffect(() => {
+    fetchSkills();
+  }, []);
 
   return (
     <div className='pt-4'>
